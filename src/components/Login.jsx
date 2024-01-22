@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = ({ isLoggedIn, setIsLoggedIn }) => {
+const Login = ({ setIsLoggedIn, setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,6 +16,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
     e.preventDefault();
     // Perform login logic here
     setIsLoggedIn(true);
+    setUser(email);
   };
 
   return (

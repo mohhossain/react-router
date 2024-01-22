@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ cartCount }) => {
   return (
     <nav className="navbar">
       <h1 className="logo">Amaze-zone</h1>
@@ -12,7 +12,7 @@ const Navbar = () => {
           <a href="/products">Products</a>
         </li>
         <li>
-          <a href="/cart">Cart</a>
+          <a href="/cart">Cart {cartCount}</a>
         </li>
         <li>
           <a href="/about">About</a>
