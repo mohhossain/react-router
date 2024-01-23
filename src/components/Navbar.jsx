@@ -1,27 +1,28 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = ({ cartCount }) => {
+  const navClass = ({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : "";
   return (
     <nav className="navbar">
       <h1 className="logo">Amaze-zone</h1>
       <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/products">Products</a>
-        </li>
-        <li>
-          <a href="/cart">Cart {cartCount}</a>
-        </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
-        <li>
-          <a className="login" href="/login">
-            Login
-          </a>
-        </li>
+        <NavLink to="/" className={navClass}>
+          Home
+        </NavLink>
+        <NavLink to="/products" className={navClass}>
+          Products
+        </NavLink>
+        <NavLink to="/about" className={navClass}>
+          About
+        </NavLink>
+        <NavLink to="/cart" className={navClass}>
+          Cart
+        </NavLink>
+        <NavLink to="/login" className={navClass + " login"}>
+          Login
+        </NavLink>
       </ul>
     </nav>
   );

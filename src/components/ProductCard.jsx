@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function ProductCard({ product, cartCount, setCartCount }) {
+  const navigate = useNavigate();
   function handleClick() {
     setCartCount(cartCount + 1);
 
@@ -18,8 +20,13 @@ function ProductCard({ product, cartCount, setCartCount }) {
       .then((res) => res.json())
       .then((json) => console.log(json));
   }
+
+  function handleCardClick() {
+    navigate("/products/" + product.id);
+  }
+
   return (
-    <div className="product-card">
+    <div onClick={handleCardClick} className="product-card">
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p>${product.price}</p>

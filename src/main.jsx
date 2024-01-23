@@ -7,6 +7,7 @@ import Error from "./Error";
 import ProductList from "./components/ProductList.jsx";
 import Login from "./components/Login.jsx";
 import Cart from "./components/Cart.jsx";
+import ProductPage from "./components/ProductPage.jsx";
 
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -43,6 +44,10 @@ const Main = () => {
           ) : (
             <Login setIsLoggedIn={setIsLoggedIn} />
           ),
+        },
+        {
+          path: "/products/:id",
+          element: <ProductPage />,
         },
       ],
     },
