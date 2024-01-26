@@ -6,7 +6,7 @@ function ProductCard({ product, cartCount, setCartCount }) {
   function handleClick() {
     setCartCount(cartCount + 1);
 
-    fetch("http://localhost:3000/cart-products", {
+    fetch("https://curious-plum-hourglass.glitch.me/cart-products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

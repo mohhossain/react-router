@@ -10,7 +10,7 @@ function App({ user }) {
   const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch("https://curious-plum-hourglass.glitch.me/products")
       .then((res) => res.json())
       .then((json) => setProducts(json));
   }, []);
