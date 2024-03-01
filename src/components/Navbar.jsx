@@ -7,7 +7,7 @@ const Navbar = () => {
       <h1 className="logo">Amaze-zone</h1>
 
       <div className="links">
-        <Link to="/">Home</Link>
+        <Link to="/home">Home</Link>
         <Link to="/products">Products</Link>
         <Link to="/cart"> 🛒 </Link>
       </div>

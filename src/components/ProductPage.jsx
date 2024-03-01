@@ -1,26 +1,30 @@
-import React from "react";
-
-const handBag = {
-  id: 4,
-  name: "Leather Handbag",
-  image:
-    "data:image/jpeg;base64,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",
-  price: 129.99,
-  description:
-    "This handbag is perfect for any occasion. Made of 100% leather and available in a variety of colors. Handcrafted in Italy.",
-  quantity: 2,
-};
+import React, { useState, useEffect } from "react";
+import { useParams, useLocation } from "react-router-dom";
 
 function ProductPage() {
+  const { id } = useParams();
+  console.log(id);
+
+  const location = useLocation();
+  console.log(location);
+
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    fetch("http://localhost:3000/products/" + id)
+      .then((res) => res.json())
+      .then((data) => setProduct(data));
+  }, []);
+
   return (
     <div className="product-detail-page">
       <div className="product-detail">
-        <img src={handBag.image} alt={handBag.name} />
+        <img src={product.image} alt={product.name} />
         <div className="product-detail-info">
-          <h1>{handBag.name}</h1>
-          <p className="price">${handBag.price}</p>
-          <p className="availability">{handBag.quantity} available</p>
-          <p className="description">{handBag.description}</p>
+          <h1>{product.name}</h1>
+          <p className="price">${product.price}</p>
+          <p className="availability">{product.quantity} available</p>
+          <p className="description">{product.description}</p>
           <button className="add-to-cart">Add to Cart</button>
         </div>
       </div>

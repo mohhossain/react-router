@@ -2,17 +2,15 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import { useOutletContext } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Navbar from "./Navbar";
 
 function ProductList() {
-  // const { products } = useOutletContext();
+  const { products } = useOutletContext();
 
-  const [products, setProducts] = useState([]);
+  
 
-  useEffect(() => {
-    fetch("http://localhost:3000/products")
-      .then((res) => res.json())
-      .then((json) => setProducts(json));
-  }, []);
+  console.log(products);
+
   return (
     <div className="product-list">
       {products.map((product) => (

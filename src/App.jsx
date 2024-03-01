@@ -3,7 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import ProductPage from "./components/ProductPage";
-// import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 import ProductList from "./components/ProductList";
 
@@ -19,12 +19,14 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Home />
+
       <div className="container">
-        {/* <Outlet  /> */}
-        <ProductList />
-        <ProductPage />
+        <p>Above the outlet</p>
+        <Outlet context={{ products }} />
+        <p>Below the outlet</p>
       </div>
+
+      <h1>Footer</h1>
     </div>
   );
 }
