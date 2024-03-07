@@ -11,7 +11,7 @@ function App() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch("https://mock-db.onrender.com/products")
       .then((res) => res.json())
       .then((json) => setProducts(json));
   }, []);
@@ -22,7 +22,7 @@ function App() {
 
       <div className="container">
         <p>Above the outlet</p>
-        <Outlet context={{ products }} />
+        <Outlet context={{ products, setProducts }} />
         <p>Below the outlet</p>
       </div>
 
